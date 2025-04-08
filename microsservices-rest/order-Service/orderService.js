@@ -5,12 +5,11 @@ const app = express(); //instancia do express
 
 app.use(express.json()); //para receber json no body da requisição
 
-app.post('/usuarios', async (req, res) => { 
-    const usuario = req.body; //pega o body da requisição
+app.post('/pedidos', async (req, res) => { 
+    const pedido = req.body; //pega o body da requisição
+     console.log('Pedido recebido:', pedido); //log do pedido recebido
+     res.send({message: 'Pedido recebido com sucesso!', pedido}); //resposta para o cliente
 
-    await axios.post('http://localhost:4000/pedidos', {userId: usuario.id}) //faz a requisição para o microserviço de usuarios
-
-    res.send({message: 'Usuario criado com sucesso!'}); //resposta para o cliente
     });
 
-app.listen(3000, () => {console.log('Servidor rodando na porta 3000')});
+    app.listen(4000, () => {console.log('Servidor rodando na porta 4000')}); //inicia o servidor na porta 4000
