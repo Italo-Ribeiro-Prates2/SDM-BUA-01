@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 // Conexão com MongoDB Atlas
-const mongoUri = "mongodb+srv://italo-ribeiro-prates:italoIRP03052006it.@usjt-sdm.dp5o1tk.mongodb.net/orderservice?retryWrites=true&w=majority&appName=USJT-SDM";
+const mongoUri = "mongodb+srv://italo-ribeiro-prates:<db_password>@usjt-sdm.dp5o1tk.mongodb.net/orderservice?retryWrites=true&w=majority&appName=USJT-SDM";
 mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB conectado no User-Service"))
   .catch(err => console.log("Erro ao conectar no MongoDB", err));
